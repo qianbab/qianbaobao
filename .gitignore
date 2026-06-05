@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+edge-*-profile/
+chrome-*-profile/
+browser-profile/
+*_export.csv
+*_export.json
+status_details.csv
+ticker_frequency.csv
+*.cookie
+*.cookies
+*.har

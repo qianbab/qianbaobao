@@ -1,0 +1,3 @@
+display_name: S Research
+short_description: Analyze Serenity posts and build industry-chain reports with China-company benchmarks.
+default_prompt: Use the S_research workflow to analyze this source material or industry. Separate evidence from inference, identify architecture shifts and chokepoints, benchmark global leaders against representative Chinese companies, rank equity-relevant exposures, frame risks, and output an HTML/PDF report when requested.
