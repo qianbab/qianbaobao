@@ -209,6 +209,16 @@ The script supports:
 - Tables
 - Source lists
 
+### PDF Output Preview / PDF 输出效果预览
+
+**English:** The images below show example PDF-style report pages generated with the S_research workflow. They demonstrate the intended layout: cover metrics, thesis framing, section hierarchy, and China-company benchmark tables.
+
+**中文：** 下图展示了使用 S_research 工作流生成的 PDF 风格报告页面示例，包括封面指标、核心 thesis、章节结构和中国企业对标表格。
+
+![S_research PDF report preview page 1](assets/report-preview-1.jpg)
+
+![S_research PDF report preview page 2](assets/report-preview-2.jpg)
+
 **中文**
 
 先按照 `references/report-output-template.md` 创建 JSON 报告规格文件，然后运行：
