@@ -37,7 +37,7 @@ Use this mode when the user asks to analyze an industry such as AI compute, robo
 3. Map the value chain from upstream inputs to end-market revenue.
 4. Benchmark global leaders against representative Chinese companies. Read `references/china-company-benchmark.md` for table fields and comparison rules.
 5. Convert the thesis into equity-relevant outcomes: who captures margin, who faces commoditization, what milestones validate or break the thesis, and which risks can permanently impair value.
-6. When the user asks for a report or PDF, write a source-grounded HTML report first, then use `scripts/build_report_pdf.py` to generate a PDF from a JSON report spec, or adapt the script if the local report format requires it.
+6. When the user asks for a report or PDF, create a source-grounded JSON report spec, then use `scripts/build_report_pdf.py` to generate a high-quality HTML/CSS report and print that HTML to PDF with Edge/Chrome. Treat browser-printed HTML as the primary PDF path; use ReportLab only as a fallback when no supported browser is available.
 
 ## Scripts: X Data
 
@@ -68,15 +68,15 @@ Use detail fetching when many rows have `needs_detail_fetch=yes`, when exact pos
 
 ## Scripts: Report Output
 
-Build a PDF and optional HTML from a structured JSON report spec:
+Build a designed HTML report and browser-printed PDF from a structured JSON report spec:
 
 ```bash
 python <path-to-skill>/scripts/build_report_pdf.py report_spec.json --html report.html --pdf report.pdf
 ```
 
-For the expected JSON shape, read `references/report-output-template.md`. The script supports Chinese text, headings, paragraphs, bullet lists, metric blocks, and tables. Prefer this script for repeatable report output instead of rewriting PDF code every time.
+For the expected JSON shape, read `references/report-output-template.md`. The script renders a polished HTML/CSS report first, then uses Edge/Chrome headless print-to-PDF so the PDF keeps the same visual style as the HTML. Prefer this script for repeatable report output instead of writing one-off PDF code.
 
-Dependencies: `scripts/build_report_pdf.py` requires Python `reportlab`. `scripts/fetch_status_details_cdp.mjs` requires the Node package `playwright` and a browser already exposing a local CDP endpoint.
+Dependencies: `scripts/build_report_pdf.py` uses Edge/Chrome for best PDF output and Python `reportlab` only as a fallback. `scripts/fetch_status_details_cdp.mjs` requires the Node package `playwright` and a browser already exposing a local CDP endpoint.
 
 ## Reference Files
 

@@ -1,6 +1,6 @@
 # Report Output Template
 
-Use this reference when the user asks S_research to output an industry report as HTML or PDF.
+Use this reference when the user asks S_research to output an industry report as HTML or PDF. The primary output pipeline is `JSON spec -> designed HTML/CSS -> browser-printed PDF`.
 
 ## Report Checklist
 
@@ -55,4 +55,7 @@ Include these sections unless the user narrows the scope:
 - Use source names and URLs in `sources`; avoid uncited market-size or company claims.
 - Keep evidence and inference separate in prose.
 - When current facts matter, verify with up-to-date sources before writing the report.
+- Treat the HTML/CSS report as the canonical visual layout.
+- Generate PDF by printing the HTML with Edge/Chrome whenever possible; use ReportLab only as a fallback.
+- Generated PDFs should use Microsoft YaHei on Windows when available through the browser CSS or ReportLab fallback.
 - Always verify generated PDF file existence and, when possible, page count.
